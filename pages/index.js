@@ -58,6 +58,16 @@ export default function Home() {
                 router.push('/game');
             });
         }
+        window.addEventListener('keydown', (e) => {
+            if (
+                e.key === 'ArrowUp' ||
+                e.key === 'ArrowDown' ||
+                e.key === 'ArrowRight' ||
+                e.key === 'ArrowLeft'
+            ) {
+                router.push('/game');
+            }
+        });
         return () => {
             window.cancelAnimationFrame(animationRef.current);
         };
@@ -109,7 +119,7 @@ export default function Home() {
                         </p>
                     </li>
                 </ol>
-                <h3>PRESS ANY BUTTON TO START PLAYING</h3>
+                <h3>PRESS ANY ARROW KEY TO START PLAYING</h3>
             </main>
             <Fullscreen />
             <SetTeamInput />
