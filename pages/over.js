@@ -308,7 +308,7 @@ export default function Over() {
                             autoComplete='new-password'
                             // readOnly
                             // readOnly={isReadOnly}
-                            inputMode='none'
+                            // inputMode='none'
                             required
                             // onChange={(e) =>
                             //     handleChange(
@@ -322,15 +322,15 @@ export default function Over() {
                             // value={input1}
                             // onFocus={() => console.log('focus1')}
                             // onBlur={() => setSelectedInput(null)}
-                            onFocus={() => {
-                                setHideKeyboard(false);
-                                setSelectedInput(0);
-                            }}
-                            value={values && values[0]}
-                            style={{
-                                border:
-                                    selectedInput === 0 && 'solid #E5007E 2px',
-                            }}
+                            // onFocus={() => {
+                            //     setHideKeyboard(false);
+                            //     setSelectedInput(0);
+                            // }}
+                            // value={values && values[0]}
+                            // style={{
+                            //     border:
+                            //         selectedInput === 0 && 'solid #E5007E 2px',
+                            // }}
                         />
                         <input
                             type='text'
@@ -340,7 +340,7 @@ export default function Over() {
                             autoComplete='new-password'
                             // value={values && values[1]}
                             required
-                            inputMode='none'
+                            // inputMode='none'
                             // onChange={(e) =>
                             //     handleChange(
                             //         e,
@@ -352,17 +352,17 @@ export default function Over() {
                             // }
                             // value={input2}
                             // onBlur={() => setSelectedInput(null)}
-                            onFocus={() => {
-                                setHideKeyboard(false);
-                                setSelectedInput(1);
-                            }}
-                            value={values && values[1]}
+                            // onFocus={() => {
+                            //     setHideKeyboard(false);
+                            //     setSelectedInput(1);
+                            // }}
+                            // value={values && values[1]}
                             // readOnly
                             // readOnly={isReadOnly}
-                            style={{
-                                border:
-                                    selectedInput === 1 && 'solid #E5007E 2px',
-                            }}
+                            // style={{
+                            //     border:
+                            //         selectedInput === 1 && 'solid #E5007E 2px',
+                            // }}
                         />
                         <input
                             type='text'
@@ -372,7 +372,7 @@ export default function Over() {
                             autoComplete='new-password'
                             // value={values && values[2]}
                             required
-                            inputMode='none'
+                            // inputMode='none'
                             // onChange={(e) =>
                             //     handleChange(
                             //         e,
@@ -384,17 +384,17 @@ export default function Over() {
                             // }
                             // value={input3}
                             // onBlur={() => setSelectedInput(null)}
-                            onFocus={() => {
-                                setHideKeyboard(false);
-                                setSelectedInput(2);
-                            }}
-                            value={values && values[2]}
+                            // onFocus={() => {
+                            //     setHideKeyboard(false);
+                            //     setSelectedInput(2);
+                            // }}
+                            // value={values && values[2]}
                             // readOnly
                             // readOnly={isReadOnly}
-                            style={{
-                                border:
-                                    selectedInput === 2 && 'solid #E5007E 2px',
-                            }}
+                            // style={{
+                            //     border:
+                            //         selectedInput === 2 && 'solid #E5007E 2px',
+                            // }}
                         />
                     </div>
                     <h2>Please enter your email</h2>
@@ -409,16 +409,16 @@ export default function Over() {
                         required
                         inputMode='none'
                         // onBlur={() => setSelectedInput(null)}
-                        onFocus={() => {
-                            setHideKeyboard(false);
-                            setSelectedInput(3);
-                        }}
-                        value={values && values[3]}
+                        // onFocus={() => {
+                        //     setHideKeyboard(false);
+                        //     setSelectedInput(3);
+                        // }}
+                        // value={values && values[3]}
                         // readOnly
                         // readOnly={isReadOnly}
-                        style={{
-                            border: selectedInput === 3 && 'solid #E5007E 2px',
-                        }}
+                        // style={{
+                        //     border: selectedInput === 3 && 'solid #E5007E 2px',
+                        // }}
                     />
                     <br />
                     <div className={styles.checkboxes}>
@@ -436,10 +436,10 @@ export default function Over() {
                                 // checked={values && values[4]}
                                 className={styles.checkbox}
                                 autoComplete='on'
-                                onFocus={() => {
-                                    setHideKeyboard(true);
-                                    // setSelectedInput(4);
-                                }}
+                                // onFocus={() => {
+                                //     setHideKeyboard(true);
+                                //     // setSelectedInput(4);
+                                // }}
                                 // style={{
                                 //     border:
                                 //         selectedInput === 4 &&
@@ -465,10 +465,10 @@ export default function Over() {
                                 className={styles.checkbox}
                                 // checked={values && values[5]}
                                 // required
-                                onFocus={() => {
-                                    setHideKeyboard(true);
-                                    // setSelectedInput(4);
-                                }}
+                                // onFocus={() => {
+                                //     setHideKeyboard(true);
+                                //     // setSelectedInput(4);
+                                // }}
                                 // style={{
                                 //     border:
                                 //         selectedInput === 5 &&
@@ -495,10 +495,10 @@ export default function Over() {
                                 className={styles.checkbox}
                                 // checked={values && values[6]}
                                 required
-                                onFocus={() => {
-                                    setHideKeyboard(true);
-                                    // setSelectedInput(4);
-                                }}
+                                // onFocus={() => {
+                                //     setHideKeyboard(true);
+                                //     // setSelectedInput(4);
+                                // }}
                                 // style={{
                                 //     border:
                                 //         selectedInput === 6 &&
@@ -555,6 +555,7 @@ export default function Over() {
                         style={{
                             // border: selectedInput === 7 && 'solid #E5007E 2px',
                             fontFamily: 'Outfit, sans-serif',
+                            cursor: 'pointer',
                         }}
                     />
                 </form>
@@ -574,13 +575,13 @@ export default function Over() {
                     {/* <img src='/qr-2.svg' alt='' /> */}
                 </div>
             </main>
-            <Keyboard
+            {/* <Keyboard
                 getValue={handleGetValue}
                 getEnter={handleEnter}
                 selectedInput={selectedInput}
                 hideKeyboard={hideKeyboard}
                 // keyboardInactive={hideKeyboardRef.current}
-            />
+            /> */}
             {/* <button
                 className='progressButton'
                 onClick={() => router.push('/score')}

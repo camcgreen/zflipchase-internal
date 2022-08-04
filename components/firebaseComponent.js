@@ -127,7 +127,7 @@ function BuildLeaderboard({ type, screen }) {
                     (firstItem, secondItem) =>
                         secondItem.Score - firstItem.Score
                 );
-                if (data.length > 10) {
+                if (newData.length > 10) {
                     let dataCopy = [];
                     for (let i = 0; i < 10; i += 1) {
                         dataCopy.push(newData[i]);
@@ -249,6 +249,73 @@ function BuildLeaderboard({ type, screen }) {
     return <>{renderSwitch(type)}</>;
 }
 
+//With the data given from the database build an array of n values ordered by score
+function BuildAllLeaderboard({ type, screen }) {
+    fireBaseStartApp();
+    const db = getFirestore(app);
+    const [Table, setTable] = useState([]);
+    let data = [];
+    useEffect(() => {
+        const teamNumber = localStorage.getItem('team');
+        const getData = () => {
+            if (data[0]) {
+                let newData = data[teamNumber - 1].Leaderboard;
+                newData.sort(
+                    (firstItem, secondItem) =>
+                        secondItem.Score - firstItem.Score
+                );
+                setTable(newData);
+            }
+        };
+
+        HighScore = Table[0] && Table[0].Score;
+
+        const unsubscribe = onSnapshot(
+            collection(db, 'InternalLeaderboard'),
+            (snapshot) => {
+                data = [];
+                snapshot.forEach((element) => {
+                    data.push({ ...element.data(), id: element.id });
+                });
+                getData();
+            },
+            (error) => {
+                console.log('error: ', error);
+            }
+        );
+
+        getData();
+        return () => {
+            unsubscribe();
+        };
+    }, []);
+
+    const renderSwitch = (type) => {
+        switch (type) {
+            case 'leaderboard':
+                return (
+                    <table>
+                        <tbody>
+                            {Table &&
+                                Table.map((e, i) => {
+                                    return (
+                                        <tr key={i + 1}>
+                                            <th>{`${i + 1}.`}</th>
+                                            <th>{e.Alias}</th>
+                                            <th>{e.Score}</th>
+                                        </tr>
+                                    );
+                                })}
+                        </tbody>
+                    </table>
+                );
+            default:
+                return null;
+        }
+    };
+    return <>{renderSwitch(type)}</>;
+}
+
 function HighScoreComp() {
     const [HighScoreInComponent, setHighScoreInComponent] = useState(null);
 
@@ -299,6 +366,7 @@ export {
     addDataToLeaderboard,
     getMainLeaderboard,
     BuildLeaderboard,
+    BuildAllLeaderboard,
     HighScoreComp,
     ListenDatabaseAndGetLeaderboard,
 };

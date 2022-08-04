@@ -55,3 +55,13 @@ input {
     color: var(--colPink);
     font-size: 2.5rem;
 }
+
+table, th, td {
+    font-size: 2rem;
+    border: 1px solid black;
+}
+
+th {
+    padding: 20px;
+    font-weight: 400;
+}
