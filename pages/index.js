@@ -65,7 +65,10 @@ export default function Home() {
                 e.key === 'ArrowRight' ||
                 e.key === 'ArrowLeft'
             ) {
-                router.push('/game');
+                const teamNumber = localStorage.getItem('team');
+                if (teamNumber !== null) {
+                    router.push('/game');
+                }
             }
         });
         return () => {

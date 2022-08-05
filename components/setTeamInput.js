@@ -4,7 +4,7 @@ import styles from '../styles/SetTeam.module.css';
 // import { fireBaseStartApp, setDevice } from './firebaseComponent';
 
 export default function SetTeamInput() {
-    const [showTeam, setShowTeam] = useState(true);
+    const [showTeam, setShowTeam] = useState(false);
     const handleDropdown = (e, setShowTeam) => {
         e.preventDefault();
         setShowTeam(false);
@@ -23,15 +23,18 @@ export default function SetTeamInput() {
         selectForm.value = teamNumber;
     }, []);
     return (
-        <div className={styles.container} style={{ opacity: showTeam ? 1 : 0 }}>
-            <select
-                name='teams'
-                id='teams'
-                onChange={(e) => handleDropdown(e, setShowTeam)}
-            >
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-            </select>
+        <div className={styles.overlay} style={{ opacity: showTeam ? 1 : 0 }}>
+            <div className={styles.container}>
+                <h1>Choose your team.</h1>
+                <select
+                    name='teams'
+                    id='teams'
+                    onChange={(e) => handleDropdown(e, setShowTeam)}
+                >
+                    <option value='1'>Team 1</option>
+                    <option value='2'>Team 2</option>
+                </select>
+            </div>
         </div>
     );
 }
