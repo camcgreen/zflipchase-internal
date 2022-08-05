@@ -304,7 +304,7 @@ export default function Over() {
                             type='text'
                             id='initial0'
                             // ref={input1}
-                            // maxLength='1'
+                            maxLength='1'
                             autoComplete='new-password'
                             // readOnly
                             // readOnly={isReadOnly}
@@ -336,7 +336,7 @@ export default function Over() {
                             type='text'
                             id='initial1'
                             // ref={input2}
-                            // maxLength='1'
+                            maxLength='1'
                             autoComplete='new-password'
                             // value={values && values[1]}
                             required
@@ -368,7 +368,7 @@ export default function Over() {
                             type='text'
                             id='initial2'
                             // ref={input3}
-                            // maxLength='1'
+                            maxLength='1'
                             autoComplete='new-password'
                             // value={values && values[2]}
                             required
