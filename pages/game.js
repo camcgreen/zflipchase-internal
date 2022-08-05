@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { router } from 'next/router';
+import { BuildLeaderboard } from '../components/firebaseComponent';
 import styles from '../styles/Game.module.css';
 import TileMap from '../logic/TileMap';
 import Fullscreen from '../components/fullscreen';
@@ -163,7 +164,7 @@ export default function Game() {
                     <br />
                     <br />
                     <h4>HIGH SCORE</h4>
-                    {/* <BuildLeaderboard type='highScore' /> */}
+                    <BuildLeaderboard type='highScore' />
                 </div>
             </main>
             <div className={styles.overlay} id='overlay'></div>

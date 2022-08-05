@@ -61,6 +61,17 @@ table, th, td {
     border: 1px solid black;
 }
 
+table {
+    /* max-height: 80vh;
+    overflow-y: auto; */
+}
+
+tbody {
+    display: block;
+    height: 80vh;
+    overflow-y: auto;
+}
+
 th {
     padding: 20px;
     font-weight: 400;

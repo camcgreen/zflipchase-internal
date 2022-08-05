@@ -60,7 +60,7 @@ const Fullscreen = () => {
             onClick={() => {
                 toggleFullScreen(setShowIcon);
             }}
-            style={{ opacity: showIcon ? 1 : 0 }}
+            // style={{ opacity: showIcon ? 1 : 0 }}
         >
             <img src='/fullscreen.svg' alt='' />
         </button>

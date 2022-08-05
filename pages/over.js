@@ -559,8 +559,8 @@ export default function Over() {
                         }}
                     />
                 </form>
-                <h2>Collect your tickets below</h2>
-                <img src='/downArrow.svg' className={styles.downArrow} alt='' />
+                {/* <h2>Collect your tickets below</h2>
+                <img src='/downArrow.svg' className={styles.downArrow} alt='' /> */}
                 <div className={styles.conditions}>
                     <p>
                         Terms and Conditions apply. By playing the game and

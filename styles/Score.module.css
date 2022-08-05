@@ -38,16 +38,32 @@
 .zFlipChase {
     /* width: 1400px; */
     /* width: 90%; */
-    width: 90%;
+    /* width: 90%; */
+    width: min(90%, 1600px);
     margin-bottom: 20px;
   }
 
 .leaderboardIcon {
     /* width: 50%; */
     /* width: 90%; */
-    width: 45%;
+    /* width: 45%; */
+    width: min(45%, 800px);
     /* margin-bottom: 120px; */
     margin-bottom: 60px;
+}
+
+@media (max-width: 1400px) {
+    .container {
+        font-size: 1.5rem;
+    }
+
+    .zFlipChase {
+        width: 70%;
+    }
+
+    .leaderboardIcon {
+        width: 30%;
+    }
 }
 
 .grid {
@@ -154,7 +170,7 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 25px;
-    max-width: 60%;
+    max-width: min(750px, 60%);
     z-index: 4;
     font-size: 0.75rem;
     text-align: center;

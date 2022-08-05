@@ -106,7 +106,7 @@ export default function Score() {
         //     });
         // }
 
-        // setTimeout(() => router.push('/'), 5000);
+        setTimeout(() => router.push('/'), 5000);
         return () => {
             // window.cancelAnimationFrame(handleJoystickButton);
             // window.cancelAnimationFrame(animationRef1.current);

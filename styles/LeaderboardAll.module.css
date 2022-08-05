@@ -2,9 +2,11 @@
     background: white;
     color: black;
     font-weight: 400;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    overflow-y: auto;
-    padding-top: 40px;
+    /* overflow-y: auto; */
+    overflow-y: hidden;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
