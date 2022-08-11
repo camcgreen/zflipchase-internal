@@ -31,8 +31,10 @@ export default function SetTeamInput() {
                     id='teams'
                     onChange={(e) => handleDropdown(e, setShowTeam)}
                 >
-                    <option value='1'>Team 1</option>
-                    <option value='2'>Team 2</option>
+                    {/* <option value='1'>Team 1</option>
+                    <option value='2'>Team 2</option> */}
+                    <option value='1'>PRS Colleagues</option>
+                    <option value='2'>Samsung HQ</option>
                 </select>
             </div>
         </div>

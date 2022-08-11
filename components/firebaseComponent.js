@@ -329,7 +329,7 @@ function HighScoreComp() {
 // BuildLeaderboard();
 
 //Add data to the Leaderboard Array
-async function addDataToLeaderboard(Alias, Score, Email, Communications) {
+async function addDataToLeaderboard(Alias, Score, Email, Communications, Age) {
     const db = getFirestore(app);
 
     const teamNumber = localStorage.getItem('team');
@@ -342,6 +342,7 @@ async function addDataToLeaderboard(Alias, Score, Email, Communications) {
         Score: Score,
         Email: Email,
         Communications: Communications,
+        Age: Age,
     };
     console.log('adding to: ' + teamNumber);
     console.log(newData);
