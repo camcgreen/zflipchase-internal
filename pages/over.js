@@ -23,19 +23,21 @@ const submitForm = (e, score, setHideKeyboard, setIsReadOnly) => {
     const initials2 = document.getElementById('initial2').value.toUpperCase();
     const initials = `${initials0}${initials1}${initials2}`;
     const email = document.getElementById('email').value;
-    const communications = document.getElementById('comms').checked;
-    const age = document.getElementById('age').checked;
-    const privacy = document.getElementById('privacy').checked;
+    // const communications = document.getElementById('comms').checked;
+    // const age = document.getElementById('age').checked;
+    // const privacy = document.getElementById('privacy').checked;
     // const email = e.target[3].value;
     // const communications = e.target[4].checked;
     // const age = e.target[5].checked;
     // const privacy = e.target[6].checked;
     // if (score && initials && email && age && privacy) {
-    if (score && initials && email && privacy) {
+    // if (score && initials && email && privacy) {
+    if (score && initials && email) {
         // console.log('proper');
         // console.log(score, initials, email, communications, age, privacy);
         // addDataToLeaderboard(initials, score, email, communications); // ADD AGE HERE
-        addDataToLeaderboard(initials, score, email, communications, age); // ADD AGE HERE
+        // addDataToLeaderboard(initials, score, email, communications, age); // ADD AGE HERE
+        addDataToLeaderboard(initials, score, email);
         localStorage.setItem('initials', initials);
         localStorage.setItem('formSubmitted', true);
         router.push('/score');
@@ -422,7 +424,7 @@ export default function Over() {
                         // }}
                     />
                     <br />
-                    <div className={styles.checkboxes}>
+                    {/* <div className={styles.checkboxes}>
                         <div
                             className={styles.checkboxColumn}
                             // style={{
@@ -511,7 +513,7 @@ export default function Over() {
                                 policy.
                             </label>
                         </div>
-                    </div>
+                    </div> */}
                     {/* <div
                         className={styles.checkboxRow}
                         style={{

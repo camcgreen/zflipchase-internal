@@ -341,8 +341,8 @@ async function addDataToLeaderboard(Alias, Score, Email, Communications, Age) {
         Alias: Alias,
         Score: Score,
         Email: Email,
-        Communications: Communications,
-        Age: Age,
+        // Communications: Communications,
+        // Age: Age,
     };
     console.log('adding to: ' + teamNumber);
     console.log(newData);
